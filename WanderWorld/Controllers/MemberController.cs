@@ -35,7 +35,6 @@ namespace WanderWorld.Controllers
             return true;
         }
 
-        // GET: Member
         public ActionResult Index()
         {
             if (IsAuthenticatedUser() == false) return RedirectToAction("Index", "Home");
@@ -74,9 +73,7 @@ namespace WanderWorld.Controllers
             if (IsAdmin() == false) return RedirectToAction("Index", "Home");
 
             loginUser.RoleName = "member";
-            loginUser.ProfileImageFileName = "user_boy.png";
-
-            // TODO : Veritabanından kullanıcı adı ya da email varlık kontrolü..
+            loginUser.ProfileImageFileName = "user_boy1.png";
             ModelState.Remove(nameof(loginUser.RoleName));
 
             if (ModelState.IsValid)

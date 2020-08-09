@@ -92,7 +92,7 @@ namespace WanderWorld.Controllers
                         Username = register_username,
                         Password = register_password,
                         RoleName = "member",
-                        ProfileImageFileName = "user_boy.png"
+                        ProfileImageFileName = "user_boy1.png"
                     });
 
                     if (db.SaveChanges() > 0)
@@ -249,7 +249,6 @@ namespace WanderWorld.Controllers
                     return View(user);
                 }
             }
-
             if (user.Email != usr.Email)
             {
                 // if email is using then not acceptable.
@@ -263,7 +262,6 @@ namespace WanderWorld.Controllers
                     return View(user);
                 }
             }
-
             if (usr != null)
             {
                 if (ProfileImage != null &&
@@ -276,7 +274,6 @@ namespace WanderWorld.Controllers
                     ProfileImage.SaveAs(Server.MapPath($"~/images/user_{user.Id}.{extension}"));
                     usr.ProfileImageFileName = $"user_{user.Id}.{extension}";
                 }
-
                 usr.Username = user.Username;
                 usr.Name = user.Name;
                 usr.Surname = user.Surname;

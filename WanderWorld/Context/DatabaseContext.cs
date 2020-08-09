@@ -9,6 +9,8 @@ using WanderWorld.Models;
 
 namespace WanderWorld.Context
 {
+    //Mvc tanımı sonrasında 
+
     public class DatabaseContext : DbContext
     {
         public DbSet<LoginUser> Uyeler { get; set; }
@@ -30,12 +32,12 @@ namespace WanderWorld.Context
         {
             context.Uyeler.Add(new LoginUser()
             {
-                Email = "gokaysunum@gmail.com@gmail.com",
-                Name = "Gökay",
-                Surname = "Sözer",
-                Username = "gokaysozer",
+                Email = "hilmikatarci@gmail.com@gmail.com",
+                Name = "Hilmi",
+                Surname = "Kantarcı",
+                Username = "hilmi",
                 Password = "123",
-                ProfileImageFileName="man.png",
+                ProfileImageFileName="man1.png",
                 RoleName = "admin"
             });
 
@@ -48,7 +50,7 @@ namespace WanderWorld.Context
                     Surname = "Soyad",
                     Username = $"uye{i}",
                     Password = "123",
-                    ProfileImageFileName = "user_boy.png",
+                    ProfileImageFileName = "user_boy1.png",
                     RoleName = "member"
                 });
             }
@@ -59,9 +61,7 @@ namespace WanderWorld.Context
 
             List<string> sehirler = new List<string>()
             {
-                "Ankara","Antalya","Bursa","Kars","Edirne",
-                "Adana","Trabzon","Burdur","Urfa",
-                "Gaziantep","Bayburt","Giresun","Rize"
+                "Kayseri","İstanbul","İzmir","Ankara","Afyon"
             };
 
             List<string> sehirResimleri = new List<string>()
@@ -116,7 +116,7 @@ namespace WanderWorld.Context
                     {
                         Tarih = FakeData.DateTimeData.GetDatetime(),
                         YorumMetni = FakeData.TextData.GetSentences(FakeData.NumberData.GetNumber(1, 3)),
-                        LoginUser = uyeler[FakeData.NumberData.GetNumber(0, uyeler.Count - 1)]
+                        LoginUser = uyeler[FakeData.NumberData.GetNumber(0, uyeler.Count - 1)]                        
                     };
 
                     sehir.Yorumlar.Add(yorum);
